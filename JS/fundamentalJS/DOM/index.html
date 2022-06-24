@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    span[show-info='name'] { 
+        color: green;
+    }
+    #wrap-para { 
+        width: 30vh;
+        height: 30vh;
+        overflow-y: auto;
+
+    }
+</style>
+<body id="body">
+    <h1>hello word</h1>
+    <p id="tag-p"  data='para' say-hi='hello'>
+        <span>hello word</span>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae placeat molestias nulla quidem illum exercitationem iste quis, beatae recusandae facere porro neque. Voluptas pariatur aperiam, porro beatae voluptatum eligendi hic.
+    </p>
+    <div class="show-info">
+        <span data-info='Hồ Đức Nguyên 20' show-info='name'></span>
+        <span show-info='age'></span>
+        <span id="learn-class" class="sp idol">class</span>
+    </div>
+    <button onclick="scrow10()">srow y 10px</button>
+    <div id="wrap-para">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo iure non beatae fugiat officia quidem tempore doloribus dolores dignissimos exercitationem. Eligendi facere neque harum quisquam facilis aspernatur repudiandae deleniti ipsum!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eius, sequi nemo sed tempore enim iste. In blanditiis ipsam accusamus, corrupti assumenda laboriosam inventore, culpa corporis vitae optio fuga consequuntur.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui ut deserunt consequatur, dolor ipsa aliquam in tempora quia sed iure libero fugit quaerat voluptatum, nemo asperiores ad? Alias, architecto! Voluptates!
+    </div>
+    <button onclick="blockScroll()">Ẩn scroll para</button>
+    <button onclick="scrow200()">scoll 200px - y</button>
+    <script src="./introduce.js"></script>
+</body>
+</html>

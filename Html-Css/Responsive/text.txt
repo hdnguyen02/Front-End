@@ -1,0 +1,59 @@
+Responsive => code giúp trang web thích ứng với các màn hình khác nhau. ( laptop,mobie)
+
+Bài 1 : Khái Niệm Viewport 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+-> Thẻ meta này có rất nhiều property -> Chủ động search  
+-> initial-scale -> tủy lệ màn hình so với thiết bị : 1 tương ứng với 100%. 
+width=device-width <-> width = chiều dài màn hình. 
+
+
+Bài 2 : Media query (@media)
+-> là 1 chuỗi truy vấn giúp bạn lựa chọn kích thước màn hình ( đâu là máy vi tính.mobie.máy tính bản )
+
+Cấu trúc cua media query  
+
+@media not|only mediaType and (mediaFeature and|or|not mediaFeature) {
+    code CSS
+}
+
+Chú thích: 
+1. keyWords  
+not 
+only 
+and 
+or 
+2. mediaType -> Loại màn hình muốn css   
+print : máy in 
+screen : Tất cả các thiết bị có màn hình : laptop,điện thoại,máy tính bản...
+speech : màn hình âm thanh -> dành cho người khiếm thị 
+all : default -> trường hợp không chỉ định mediaType -> Ứng dụng lên cả 3 : print,screen,speech 
+3. mediaFeature 
+value giúp mình có thể lựa chọn ra trường hợp cụ thể đi css  
+=> Tiêu biểu hay sử dụng : min-width và max-width -> Hay sử dụng 2 loại này 
+
+
+
+@media not|only mediaType and (mediaFeature and|or|not mediaFeature)
+    Chọn ra loại màn hình       Kích thước áp dụng css
+
+
+
+max-width và min-width này không giống với thuộc tính của css 
+Mẹo hiểu :  max-width:1024px -> <=1024 Ứng với các màn hình nhỏ hơn 1024px. min-width:1024px -> >= 1024px Ứng với các màn hình lớn hơn 1024px 
+
+
+
+BreakPoint là những điểm vị trí mà bố cục website sẽ thay đổi - thích ứng để tạo nên giao diện Responsive
+
+// Một vài breakPoint phổ biến 
+320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+1201px and more —  Extra large screens, TV
+
+
+
+Em,rem,px trong media query 
+-> Nên sử dụng Em cho media query 
+-> Đơn vị Em,rem,px không giống trong css. default 1em = 1rem = 16px

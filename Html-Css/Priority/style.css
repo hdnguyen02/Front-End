@@ -1,0 +1,51 @@
+
+
+/* 
+Độ ưu tiên trong css 
+inline(1000) -> id(100) -> class(10) -> tagName(1) -> *(0) -> ảnh hưởng thẻ cha tới thẻ con ( 0 ) 
+
+-> có thể kết hợp các cách chọn tag khác nhau ( theo trình tự : tag-id.class  
+-> phải đúng hết các trường hợp trong kết hợp mới thỏa mãn css 
+
+Cách sử dụng biến trong css : bỏ các biến cần tạo vào :root {}, Khi muốn lấy biến đó ra sử dụng 
+func var( tên biến ) 
+
+CÁC ĐƠN VỊ TRONG CSS 
+- Chia ra làm 2 loại : tuyệt đối và tương đối 
+    - Đơn vị tuyệt đối hay sử dụng : px ( trước giờ sử dụng ) 
+    - Đơn vị tương đối hay sử dụng : %,rem,em,vh,vw
+
+
+
+*/
+
+:root{   /* Khu vực đặt tên biến */
+    --text-color:red;
+}
+
+#id-h1 { 
+    color: green;
+}
+
+.class-h1 { 
+    color: rebeccapurple;
+}
+
+#id-h1.class-h1 {    /* Cách viết kết hợp */
+    color:var(--text-color);  /* func sử dụng biến */
+}
+
+h1#id-h1.class-h1 {  /* Kết hợp cả tag,id,class */
+    color: black;
+}
+
+
+
+#id-ul {   
+    color:green; 
+
+}
+
+
+
+
