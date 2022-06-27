@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+
+    <style>
+        li { 
+            list-style: none;
+            cursor: pointer;
+        }
+    </style>
+  <ul class="tree" id="tree">
+    <li>Animals
+      <ul>
+        <li>Mammals
+          <ul>
+            <li>Cows</li>
+            <li>Donkeys</li>
+            <li>Dogs</li>
+            <li>Tigers</li>
+          </ul>
+        </li>
+        <li>Other
+          <ul>
+            <li>Snakes</li>
+            <li>Birds</li>
+            <li>Lizards</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Fishes
+      <ul>
+        <li>Aquarium
+          <ul>
+            <li>Guppy</li>
+            <li>Angelfish</li>
+          </ul>
+        </li>
+        <li>Sea
+          <ul>
+            <li>Sea trout</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <script>
+    // Bắt sự kiện element tổ tiên 
+    // get ra tổ tiên 
+    let treeEl = document.getElementById('tree')
+
+    // trươc tiên cần gói thẻ span vào thẻ li -> tí nữa bắt sự kiện click lên span chứ không phải thẻ li 
+    // -> lấy tất cả thẻ li ra
+    const liEls = document.querySelectorAll('.tree li')
+    // lặp qua toàn bộ 
+    for (let lEl of liEls) { 
+        // di chuyển text vào trong các span hết 
+        let span = document.createElement('span')
+        lEl.prepend(span) // thêm node này vào đầu thẻ li 
+        span.append(span.nextSibling)
+    }
+
+    // bắt sự kiện click lên toàn bộ thẻ cha -> sau đó đi kiểm tra xem có phải thẻ li được click không
+
+    // Bắt sự kiện lên thẻ span -> -> và kiểm tra xem trong thẻ span 
+     treeEl.addEventListener('click',event => { 
+        // Kiểm trả xem có phải là thẻ span hay không  
+        let target = event.target
+        if (target.tagName == 'SPAN') { 
+            // Sử lý khi là thẻ span 
+            // kiểm tra xem parent của nó có phải là thẻ ul hay không. 
+            // kiểm tra xem trong cái list này có ul hay không -> nếu không có -> 
+            // chứng tỏ không phải cấp menu con 
+            let parent = target.parentElement  // thẻ li. 
+            // kiểm tra xem trong này có thẻ ul hay không 
+            console.log(parent)
+            let ul = parent.querySelector('ul')
+            if (ul) { 
+                ul.hidden = !ul.hidden
+            }
+        }
+     })
+  </script>
+
+</body>
+</html>
